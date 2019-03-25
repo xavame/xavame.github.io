@@ -1,0 +1,104 @@
+<template>
+  <div id="root">
+    <Header />
+    <main class="totem">
+    <h1>Yazılar</h1>
+    <p>Efendim burada, geçenlerde yazdığım yazıları bulacaksınız. En üsttekiler, en son yazılanlardır. Kategoriler yazıların solunda belirtilmiştir.</p>
+    <div class="yazilar">
+      <p>
+        <nuxt-link 
+          v-for="blog in blogs"
+          :key="blog.name"
+          :to="'/blog/'+blog.name"
+          class="internal"
+        >
+          {{ blog.title }}
+        </nuxt-link>
+      </p>
+      <h2 id="dersler">Dersler</h2>
+      <p>
+        <nuxt-link 
+          v-for="blog in lectures"
+          :key="blog.name"
+          :to="'/blog/'+blog.name"
+          class="internal"
+        >
+          {{ blog.title }}
+        </nuxt-link>
+      </p>
+    </div>
+  </main>
+  </div>
+</template>
+
+<script>
+  import blogs from '~/contents/blogs.js'
+  import lectures from '~/contents/lectures.js'
+  import Header from '~/components/Header.vue'
+
+  export default {
+    components: { Header },
+    async asyncData ({store}) {
+
+      async function asyncImport (blogName) {
+        const wholeMD = await import(`~/contents/blog/${blogName}.md`)
+        return wholeMD.attributes
+      }
+      var allBlogs = await Promise.all(blogs.map(blog => asyncImport(blog))).then(el=>{
+         return {blogs:el}
+      })
+      var allLectures = await Promise.all(lectures.map(lecture => asyncImport(lecture))).then(el=>{
+         return {lectures:el}
+      })
+
+      return {...allBlogs,...allLectures};
+
+    },
+
+    head () {
+      return {
+        title: "Yazılar - XNB",
+        htmlAttrs: {
+          lang: "tr",
+        },
+        meta: [
+          { name: "author", content: "Ata Gülalan" },
+          { name: "description", property: "og:description", content: this.desc, hid: "description" },
+          { property: "og:title", content: this.title},
+          { property: "og:image", content: this.image },
+          { name: "twitter:description", content: this.desc },
+          { name: "twitter:image", content: this.image }
+        ]
+      }
+    },
+
+    computed: {
+      url: function () {
+        return process.env.baseUrl;
+      },
+      image: function () {
+        return `${process.env.baseUrl}/images/og-banner.png`;
+      },
+      title: function () {
+        return "Ceci n'est pas un blog" ;
+      },
+      desc: function () {
+        return "Delirmeye ramak kalmışken.";
+      }
+    }
+  }
+</script>
+<style scoped lang="scss">
+  .page-enter {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  .page-leave-active {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  main.totem a{
+    width:100%;
+  }
+</style>
+

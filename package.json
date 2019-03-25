@@ -1,0 +1,31 @@
+{
+  "name": "xnb",
+  "version": "1.0.0",
+  "author": "Ata Gülalan <ata@xava.me>",
+  "private": true,
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
+  },
+  "dependencies": {
+    "nuxt": "^2.3.4",
+    "vue-lazyload": "^1.2.6"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze"
+  },
+  "devDependencies": {
+    "frontmatter-markdown-loader": "^1.6.0",
+    "highlight.js": "^9.15.6",
+    "markdown-it": "^8.4.2",
+    "markdown-it-highlightjs": "^3.0.0",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "node-sass": "^4.11.0",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "sass-loader": "^7.1.0"
+  }
+}
