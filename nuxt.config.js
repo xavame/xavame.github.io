@@ -50,6 +50,8 @@ module.exports = {
     '@/assets/styles.scss'
   ],
 
+  buildDir: 'docs',
+
   build: {
     analyze: true,
     analyze: {
