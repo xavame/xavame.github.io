@@ -9,7 +9,7 @@
         <nuxt-link 
           v-for="blog in blogs"
           :key="blog.name"
-          :to="'/blog/'+blog.name"
+          :to="'/'+blog.name"
           class="internal"
         >
           {{ blog.title }}
@@ -20,7 +20,7 @@
         <nuxt-link 
           v-for="blog in lectures"
           :key="blog.name"
-          :to="'/blog/'+blog.name"
+          :to="'/'+blog.name"
           class="internal"
         >
           {{ blog.title }}

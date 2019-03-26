@@ -3,7 +3,7 @@
     <Header />
     <main class="homepage">
       <div class="left">
-        <nuxt-link :to="`/blog/${featured.name}`" class="item">
+        <nuxt-link :to="`/${featured.name}`" class="item">
           <CoolLoad type="now">
             <h2>
               <span class="waitLoad">{{ featured.title.toLowerCase() }}</span>
@@ -25,7 +25,7 @@
       </div>
       <footer class="fadeIn">
         <div class="limit">
-          <nuxt-link to="/blog" class="left">
+          <nuxt-link to="/yazilar" class="left">
             <div class="fadeFromBottom">
               TÜM YAZILARA GİT
             </div>

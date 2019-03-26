@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'left': darkHeaderRoutes }">
+  <header :class="{ 'left': logoLeft }">
     <div class="limit">
       <nuxt-link to="/" class="logo">
         <img src="/images/logo-xnb.svg" alt="XNB">
@@ -13,10 +13,7 @@
 export default {
   name: "Header",
   computed: {
-    altRoutes () {
-      return this.$route.path === '/' || this.$route.path === '/blog'
-    },
-    darkHeaderRoutes () {
+    logoLeft () {
       return this.$route.path === '/'
     }
   }

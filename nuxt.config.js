@@ -51,10 +51,6 @@ module.exports = {
   ],
 
   build: {
-    analyze: true,
-    analyze: {
-      analyzerMode: 'static'
-    },
     extend (config) {
       const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
       config.module.rules.splice(config.module.rules.indexOf(rule), 1);
@@ -93,7 +89,7 @@ module.exports = {
 
   generate: {
     routes: []
-    .concat(blogs.map(w => `/blog/${w}`))
-    .concat(lectures.map(w => `/blog/${w}`))
+    .concat(blogs.map(w => `/${w}`))
+    .concat(lectures.map(w => `/${w}`))
   }
 }
