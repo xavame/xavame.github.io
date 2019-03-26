@@ -2,6 +2,7 @@ const builtAt = new Date().toISOString()
 const path = require('path')
 import blogs from './contents/blogs.js'
 import lectures from './contents/lectures.js'
+import other from './contents/other.js'
 import markdownThat from './plugins/markdown-that'
 
 const baseUrl = 'https://xava.me';
@@ -91,5 +92,6 @@ module.exports = {
     routes: []
     .concat(blogs.map(w => `/${w}`))
     .concat(lectures.map(w => `/${w}`))
+    .concat(other.map(w => `/${w}`))
   }
 }
