@@ -94,5 +94,6 @@ module.exports = {
   generate: {
     routes: []
     .concat(blogs.map(w => `/blog/${w}`))
+    .concat(lectures.map(w => `/blog/${w}`))
   }
 }
