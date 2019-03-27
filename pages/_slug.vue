@@ -235,3 +235,35 @@
     
   }
 </script>
+
+<style scoped lang="scss">
+@media screen and (max-width: 800px) {
+  main.totem{
+    white-space: pre-line;
+    word-break: break-word;
+    h1{
+      font-size:32pt;
+    }
+    h2,h3,h4,h5,h6{
+      padding: 50pt 10pt 10pt;
+    }
+    p{
+      padding: 0 10pt 30pt;
+    }
+    pre{
+      code{
+        border-radius:0;
+      }
+    }
+    blockquote{
+      margin: 0pt auto; 
+    }
+    table{
+      border-radius:0;
+    }
+    ul, ol {
+      margin:0 10pt;
+    }
+  }
+} 
+</style>

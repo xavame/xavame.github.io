@@ -22,11 +22,11 @@ module.exports = {
       { property: 'og:updated_time', content: builtAt }
     ],
     link: [
-      { rel:'preload', as:'font', href: '/fonts/FiraCode-Bold.ttf', type:'font/truetype', crossorigin:'anonymous'},
-      { rel:'preload', as:'font', href: '/fonts/FiraCode-Light.ttf', type:'font/truetype', crossorigin:'anonymous'},
-      { rel:'preload', as:'font', href: '/fonts/FiraCode-Medium.ttf', type:'font/truetype', crossorigin:'anonymous'},
-      { rel:'preload', as:'font', href: '/fonts/FiraCode-Regular.ttf', type:'font/truetype', crossorigin:'anonymous'},
-      { rel:'preload', as:'font', href: '/fonts/FiraCode-Retina.ttf', type:'font/truetype', crossorigin:'anonymous'},
+      { rel:'preload', as:'font', href: '/fonts/FiraCode-Bold.ttf', type:'font/ttf', crossorigin:'anonymous'},
+      { rel:'preload', as:'font', href: '/fonts/FiraCode-Light.ttf', type:'font/ttf', crossorigin:'anonymous'},
+      { rel:'preload', as:'font', href: '/fonts/FiraCode-Medium.ttf', type:'font/ttf', crossorigin:'anonymous'},
+      { rel:'preload', as:'font', href: '/fonts/FiraCode-Regular.ttf', type:'font/ttf', crossorigin:'anonymous'},
+      { rel:'preload', as:'font', href: '/fonts/FiraCode-Retina.ttf', type:'font/ttf', crossorigin:'anonymous'},
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-16x16.png', sizes: '16x16' },
       { rel: 'icon', type: 'image/png', href: '/favicons/favicon-32x32.png', sizes: '32x32' },
       { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-256x256.png', sizes: '256x256' },
