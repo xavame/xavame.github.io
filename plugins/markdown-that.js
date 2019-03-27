@@ -16,7 +16,7 @@ getAttr = (token, attr) => {
 }
 
 md.renderer.rules.image = function (tokens, idx, options, env, self) {
-  var token = tokens[idx],
+  let token = tokens[idx],
       href = getAttr(token, 'src'),
       text = getAttr(token, 'alt'),
       title = getAttr(token, 'title');

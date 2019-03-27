@@ -51,10 +51,10 @@
         const wholeMD = await import(`~/contents/blog/${blogName}.md`)
         return wholeMD.attributes
       }
-      var allBlogs = await Promise.all(blogs.map(blog => asyncImport(blog))).then(el=>{
+      let allBlogs = await Promise.all(blogs.map(blog => asyncImport(blog))).then(el=>{
          return {blogs:el}
       })
-      var allLectures = await Promise.all(lectures.map(lecture => asyncImport(lecture))).then(el=>{
+      let allLectures = await Promise.all(lectures.map(lecture => asyncImport(lecture))).then(el=>{
          return {lectures:el}
       })
 

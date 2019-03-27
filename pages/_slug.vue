@@ -65,14 +65,38 @@
         link: ['']
       };
     },
+
     mounted: function() {
       //wait for animation before scrolling to top
       setTimeout(function(){
-        document.getElementById("__nuxt").scrollTo(0,0)
-      },200)
+        this.scrollToTop(document.getElementById("__nuxt"), 100, 3);
+      }.bind(this),200)
       this.audioInit()
     },
+
     methods: {
+      scrollToTop: (element, totalTime, easingPower) => {
+        let easeInOut = (t, power) => {
+          if (t < 0.5) {
+            return 0.5 * Math.pow(2 * t, power);
+          } else {
+            return 0.5 * (2 - Math.pow(2 * (1 - t), power));
+          }
+        };
+        let timeInterval = 1;
+        let scrollTop = Math.round(element.scrollTop);
+        let timeLeft = totalTime;
+        let scrollByPixel = setInterval(function() {
+          let percentSpent = (totalTime - timeLeft) / totalTime;
+          if (timeLeft >= 0) {
+            let newScrollTop = scrollTop * (1 - easeInOut(percentSpent, easingPower));
+            element.scrollTop = newScrollTop;
+            timeLeft--;
+          } else {
+            clearInterval(scrollByPixel);
+          }
+        }, timeInterval);
+      },
       audioInit: () => {
         const $ = (q, e) => {
           const i = typeof e === 'number' ? e : undefined
