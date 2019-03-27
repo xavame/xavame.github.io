@@ -3,16 +3,8 @@
     <Header />
     <main class="totem">
       <div class="intro">
-        <!--<span class="yil">{{ year }}</span> — -->
+        <!--<span class="yil">{{ year }}</span> —-->
         <h1>{{ title }}</h1>
-        <!--<p class="elevate-cover__description">{{ description }}</p>-->
-        <!--
-        <ImageResponsive
-          :imageURL="'blog/' + id + '/_main.jpg'"
-          width="100%"
-          class="elevate-cover__img"
-          :alt="'Blog picture'" />
-        -->
       </div>
       <div class="container small">
         <Markdown

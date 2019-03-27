@@ -32,32 +32,12 @@ md.renderer.rules.image = function (tokens, idx, options, env, self) {
   return (title ? "<figure class='" + title + "'>" : "") + '<image-responsive class="' + classes + '" imageURL="' + href + '" alt="' + text + '" title="' + text + '" ' + modern + '>' + ((title && text) ? "<figcaption>" + text + "</figcaption></figure>" : "</figure>")
 };
 
-var defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+  tokens[idx]["tag"] = "md-link";
   return self.renderToken(tokens, idx, options);
 };
 
-md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-  // If you are sure other plugins can't add `target` - drop check below
-  var aIndex = tokens[idx].attrIndex('target');
-  var hIndex = tokens[idx].attrIndex('href');
-  let t = tokens[idx].attrs[hIndex][1].startsWith("/") ? '_self' : '_blank'
-
-  if (aIndex < 0) {
-    tokens[idx].attrPush(['target', t]); // add new attribute
-  } else {
-    tokens[idx].attrs[aIndex][1] = t;    // replace value of existing attr
-  }
-
-  if(t==="_self"){
-    return '<nuxt-link to="'+tokens[idx].attrs[hIndex][1]+'" class="internal">'
-  } else{
-    // pass token to default renderer.
-    return defaultRender(tokens, idx, options, env, self);
-  }
-  
-};
-
-md.renderer.rules.link_close = function () { return '</nuxt-link>' }
+md.renderer.rules.link_close = function (tokens, idx, options, env, self) { return '</md-link>' }
 
 
 module.exports = {

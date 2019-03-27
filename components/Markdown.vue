@@ -1,7 +1,10 @@
 <script lang="js">
+  import MdLink from './MdLink.vue'
   export default {
     props: ["renderFunc", "staticRenderFuncs"],
-    
+    components: {
+      MdLink
+    },
     render: function (createElement) {
       return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
     },
