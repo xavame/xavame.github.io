@@ -60,6 +60,9 @@
   import CoolLoad from '~/components/CoolLoad.vue'
   
   export default {
+    meta: {
+      depth: 1
+    },
     components: {
       Header,
       CoolLoad,
@@ -100,14 +103,6 @@
 
 
 <style scoped lang="scss">
-  .page-enter {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  .page-leave-active {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
   header .limit {
     max-width: 100%;
     .logo {

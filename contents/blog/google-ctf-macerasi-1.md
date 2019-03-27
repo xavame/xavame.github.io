@@ -14,7 +14,7 @@ Ancak daha önce hiç _Kriptografi_ veya _Reverse Engineering_ (tersine mühendi
 
 Daha fazla spoiler (sürpriz kaçıran) almamak için videoyu kapattım ve **Google CTF**'i oynamaya karar verdim. Gerek retro tasarımı, gerekse eğlenceli ilerleyişiyle beni içine çekmeyi başardı.
 
-![](/assets/google-ctf-macerasi-1/1.webp)
+![](/assets/google-ctf-macerasi-1/1.webp "center")
 
 Haydi başlayalım.
 

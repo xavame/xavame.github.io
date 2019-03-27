@@ -88,6 +88,10 @@ module.exports = {
     ]]
   ],
 
+  router: {
+    middleware: 'routeTransition'
+  },
+
   generate: {
     routes: []
     .concat(blogs.map(w => `/${w}`))

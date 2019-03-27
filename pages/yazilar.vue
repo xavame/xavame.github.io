@@ -1,33 +1,37 @@
 <template>
-  <div id="root">
-    <Header />
+  <div id="root" key="sed">
+    <Header/>
     <main class="totem">
-    <h1>Yazılar</h1>
-    <p>Efendim burada, geçenlerde yazdığım yazıları bulacaksınız. En üsttekiler, en son yazılanlardır. Kategoriler yazıların solunda belirtilmiştir.</p>
-    <div class="yazilar">
-      <p>
+      <h1>Yazılar</h1>
+      <p>Efendim burada, geçenlerde yazdığım yazıları bulacaksınız. En üsttekiler, en son yazılanlardır. Kategoriler yazıların solunda belirtilmiştir.</p>
+      <div class="yazilar">
+        <p>
+          <nuxt-link 
         <nuxt-link 
-          v-for="blog in blogs"
-          :key="blog.name"
-          :to="'/'+blog.name"
-          class="internal"
-        >
-          {{ blog.title }}
-        </nuxt-link>
-      </p>
-      <h2 id="dersler">Dersler</h2>
-      <p>
+          <nuxt-link 
+            v-for="blog in blogs"
+            :key="blog.name"
+            :to="'/'+blog.name"
+            class="internal"
+          >
+            {{ blog.title }}
+          </nuxt-link>
+        </p>
+        <h2 id="dersler">Dersler</h2>
+        <p>
+          <nuxt-link 
         <nuxt-link 
-          v-for="blog in lectures"
-          :key="blog.name"
-          :to="'/'+blog.name"
-          class="internal"
-        >
-          {{ blog.title }}
-        </nuxt-link>
-      </p>
-    </div>
-  </main>
+          <nuxt-link 
+            v-for="blog in lectures"
+            :key="blog.name"
+            :to="'/'+blog.name"
+            class="internal"
+          >
+            {{ blog.title }}
+          </nuxt-link>
+        </p>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -37,6 +41,9 @@
   import Header from '~/components/Header.vue'
 
   export default {
+    meta: {
+      depth: 2
+    },
     components: { Header },
     async asyncData ({store}) {
 
@@ -85,20 +92,33 @@
       desc: function () {
         return "Delirmeye ramak kalmışken.";
       }
+    },
+    methods: {
+      beforeEnter: function (el) {
+        // ...
+        console.log("be")
+      },
+      // the done callback is optional when
+      // used in combination with CSS
+      enter: function (el, done) {
+        // ...
+        console.log("e")
+        done()
+      },
+      afterEnter: function (el) {
+        console.log("ae")
+        // ...
+      },
+      enterCancelled: function (el) {
+        console.log("ec")
+        // ...
+      },
     }
   }
 </script>
+
 <style scoped lang="scss">
-  .page-enter {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  .page-leave-active {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
   main.totem a{
     width:100%;
   }
 </style>
-

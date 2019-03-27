@@ -29,7 +29,9 @@
   import Header from '~/components/Header.vue'
 
   export default {
-
+    meta: {
+      depth: 3
+    },
     async asyncData ({params, store}) {
       const fileContent = await import(`~/contents/blog/${params.slug}.md`)
       const attr = fileContent.attributes
@@ -72,6 +74,10 @@
       };
     },
     mounted: function() {
+      //wait for animation before scrolling to top
+      setTimeout(function(){
+        document.getElementById("__nuxt").scrollTo(0,0)
+      },200)
       this.audioInit()
     },
     methods: {
@@ -229,15 +235,3 @@
     
   }
 </script>
-
-
-<style scoped lang="scss">  
-  .page-enter {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  .page-leave-active {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-</style>

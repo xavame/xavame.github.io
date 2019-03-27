@@ -203,6 +203,7 @@ html, body{
   overflow: auto;
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
   header {
       width: 100%;
       height: 144px;
@@ -676,6 +677,8 @@ main.totem {
     max-width: 100%;
   }
   pre {
+    margin-bottom: 25pt;
+    overflow: auto;
     code {
       &:before,
       &:after {
@@ -684,7 +687,6 @@ main.totem {
       color: #4d4949;
       background: rgba(0, 0, 0, 0.01);
       white-space: pre-wrap;
-      margin-bottom: 25pt;
       border-radius: 3pt;
       transition: 0.5s color, 0.5s background;
       padding: 20px 40px;
@@ -697,6 +699,7 @@ main.totem {
       cursor: initial;
       font-size: 1em;
       font-weight: 400;
+      min-width:800px;
     }
   }
 }
