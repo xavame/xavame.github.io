@@ -5,7 +5,7 @@ year: '2018'
 color: '#000'
 id: 'kimim'
 description: |
-  'Çok da gizli olmayan bilgiler'
+  Çok da gizli olmayan bilgiler
 ---
 
 Ben **Ata**. **1998** yılının **Ağustos** ayında, **İzmit**'te doğdum.

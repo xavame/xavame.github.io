@@ -5,7 +5,7 @@ year: '2018'
 color: '#19c5c5'
 id: 'google-ctf-macerasi-1'
 description: |
-  'Hoppala ve de cuppala, burası bağlcılar.'
+  Hoppala ve de cuppala, burası XNB.
 ---
 
 Geçen gün YouTube'da gezerken bir şeye denk geldim. Bir adam, **Google**'ın CTF'ini (Capture The Flag, Bayrak Kapmaca) oynuyordu. Bir **JavaScript** görevini çözmeye çalıştığı için hemen kulaklarım havaya dikildi ve dikkatle izlemeye başladım.

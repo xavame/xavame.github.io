@@ -5,7 +5,7 @@ year: '2018'
 color: '#fff'
 id: 'kullanici-deneyiminin-karanlik-tarafi'
 description: |
-  'UX önemli gençler!'
+  UX önemli gençler!
 ---
 
 Büyük şirketler, ürünlerindeki _kullanıcı deneyimini_ geliştirmek için çoğu zaman büyük paralar harcarlar. _Kullanıcı deneyimini_ iyileştirmek sadece kullanıcının değil, aynı zamanda şirketin veya işletmenin de yararınadır.

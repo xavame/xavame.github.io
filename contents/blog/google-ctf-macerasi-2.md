@@ -5,7 +5,7 @@ year: '2018'
 color: '#19c5c5'
 id: 'google-ctf-macerasi-2'
 description: |
-  'Çok da eğlenceli olmayan anlar. Ama neyi anlar? Üşütüyorum...'
+  Çok da eğlenceli olmayan anlar. Ama neyi anlar? Üşütüyorum...
 ---
 
 Daha önce hiçbir **CTF**'e katılmamış biri olarak ilk maceradan çok keyif aldım. İkinci maceraya başlarken de, ilk maceradaki gibi heyecan içerisindeyim.
@@ -237,7 +237,7 @@ _Session_ bilgilerini, *konsol*da `document.cookie="..."` çalıştırarak içer
 ### Yeni bittim, yine bittim.
 Bu seferki o kadar zor geçmedi sanki? Sorularınızı, yorumlarınızı bekliyorum! \^_\^
 
-[Google CTF Macerası #1]:google-ctf-macerasi-1
+[Google CTF Macerası #1]:/google-ctf-macerasi-1
 [DOSBOX]:https://www.dosbox.com/
 [Online OCR]:https://www.onlineocr.net/
 [Online Caesar Cipher]:https://cryptii.com/caesar-cipher

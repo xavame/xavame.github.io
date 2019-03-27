@@ -5,7 +5,7 @@ year: '2018'
 color: '#ff0000'
 id: 'turkiyedeki-internet-rezilligi'
 description: |
-  'Umarım kurtadamlardan dava yemeyiz'
+  Umarım kurt adamlardan dava yemeyiz
 ---
 
 Eğer bu yazıyı okuyabilecek kadar Türkçeniz var ise ve beyin gelişiminizi **_yeterince_** tamamladıysanız, benimle aynı fikirdesinizdir. Türkiye'de internet bir rezilliktir. İşte bu yazımda enine boyuna bunun gerçekten bir rezillik olduğunu ve çözüm yöntemlerini anlatacağım.

@@ -5,7 +5,7 @@ year: '2018'
 color: '#fff'
 id: 'nerelere-geldik-hanim'
 description: |
-  'Aman aman'
+  Aman aman
 ---
 
 Mütevazı bir dille gerçeklerin konuşulduğu, kâr amacı gütmeyen, reklamsız ve emojisiz bir bloğa rastladınız. Konusu olmayan bu blogda her telden yazılar yazılır, resimler çizilir.

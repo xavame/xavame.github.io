@@ -5,7 +5,7 @@ year: '2018'
 color: '#000'
 id: 'robotlar-icin-matematik-temelleri-1'
 description: |
-  '24 Eylül 2018'
+  24 Eylül 2018
 ---
 
 Bu blog yazısında 24 Eylül 2018 Pazartesi günü işlenen, [Yard. Doç. Dr. A. Burak İNNER]'in anlattığı derste aldığım notları görebilirsiniz. 

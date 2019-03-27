@@ -5,7 +5,7 @@ year: '2018'
 color: '#6c3093'
 id: 'ilim-ile-bilim-arasindaki-fark'
 description: |
-  'Spoiler: B değil.'
+  Spoiler: B değil.
 ---
 
 B harfi.
