@@ -101,8 +101,16 @@
   }
 </script>
 
-
 <style scoped lang="scss">
+  @supports (-webkit-appearance:none) {
+    @media screen and (max-width: 800px) {
+      #root {
+        overflow:hidden;
+        height: calc(100vh - 56px);
+      }
+    }
+  }
+
   header .limit {
     max-width: 100%;
     .logo {
@@ -115,6 +123,7 @@
       background-image: url('/assets/img/png/search_white.png');
     }
   }
+
   main {
     display: block;
     height: 100vh;
@@ -183,6 +192,7 @@
     }
   }
   footer {
+    overflow:hidden;
     width: 100%;
     height: 144px;
     background-color: transparent;

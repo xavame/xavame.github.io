@@ -107,9 +107,9 @@
           const pButton = ap.find('.p')
           const playhead = ap.find('.d')
           const timeline = ap.find('.l')
-          const timelineWidth = timeline.offsetWidth - playhead.offsetWidth + 20
+          const timelineWidth = (timeline.offsetWidth - 20) - playhead.offsetWidth + 20
 
-          timeline.style.width = timeline.offsetWidth + 'px'
+          timeline.style.width = (timeline.offsetWidth - 20) + 'px'
 
           // play button event listenter
           pButton.addEventListener('click', play)

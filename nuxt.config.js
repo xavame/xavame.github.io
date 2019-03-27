@@ -15,7 +15,7 @@ module.exports = {
     title: 'XNB',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
+      { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui' },
       { name: 'theme-color', content: '#f86e8f' },
       { name: 'robots', content: 'index, follow' },
       { property: 'og:type', content: 'profile' },
@@ -97,5 +97,10 @@ module.exports = {
     .concat(blogs.map(w => `/${w}`))
     .concat(lectures.map(w => `/${w}`))
     .concat(other.map(w => `/${w}`))
+  },
+
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
   }
 }

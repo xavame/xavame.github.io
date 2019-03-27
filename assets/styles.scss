@@ -741,3 +741,11 @@ main.totem {
     }
   }
 }
+
+@supports (-webkit-appearance:none) {
+  @media screen and (max-width: 800px) {
+    #__nuxt {
+      height: calc(100vh - 56px);
+    }
+  }
+}

@@ -120,5 +120,8 @@
 <style scoped lang="scss">
   main.totem a{
     width:100%;
+    &[target="_self"]::after, &.internal::after {
+      content: '-->';
+    }
   }
 </style>
