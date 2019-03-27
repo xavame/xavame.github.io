@@ -43,4 +43,4 @@ Sınavda genelde 2 soru oluyor.
 [Yard. Doç. Dr. A. Burak İNNER]:http://akademikpersonel.kocaeli.edu.tr/binner/
 [Yapay Zeka ve Benzetim Sis. Ar. Ge. Lab.]:http://yapbenzet.kocaeli.edu.tr/robotlar-icin-matematik-temelleri/
 [Uzaktan Eğitim Araştırma ve Uygulama Merkezi]:http://edestek.kocaeli.edu.tr/
-[Bir sonraki ders]:/lecture/robotlar-icin-matematik-temelleri-2
+[Bir sonraki ders]:/robotlar-icin-matematik-temelleri-2

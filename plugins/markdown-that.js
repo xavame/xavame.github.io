@@ -47,9 +47,17 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
   } else {
     tokens[idx].attrs[aIndex][1] = t;    // replace value of existing attr
   }
-  // pass token to default renderer.
-  return defaultRender(tokens, idx, options, env, self);
+
+  if(t==="_self"){
+    return '<nuxt-link to="'+tokens[idx].attrs[hIndex][1]+'" class="internal">'
+  } else{
+    // pass token to default renderer.
+    return defaultRender(tokens, idx, options, env, self);
+  }
+  
 };
+
+md.renderer.rules.link_close = function () { return '</nuxt-link>' }
 
 
 module.exports = {

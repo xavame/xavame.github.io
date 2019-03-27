@@ -172,10 +172,7 @@ Doğal logaritma e tabanındadır. Bu yüzden `log(10^5)` fonksiyonunun çıktı
 ## Haftanın ödevi
 Salı veya çarşamba günü, ders onaylandıktan sonra [Uzaktan Eğitim Araştırma ve Uygulama Merkezi] adresinde bulabilirsiniz. Üzerinde formüller olan bir kağıt paylaşılacak, bu formülleri MATLAB'da çözmeye çalışacağız.
 
-[Bir sonraki ders]
-
 [Yard. Doç. Dr. A. Burak İNNER]:http://akademikpersonel.kocaeli.edu.tr/binner/
 [Yapay Zeka ve Benzetim Sis. Ar. Ge. Lab.]:http://yapbenzet.kocaeli.edu.tr/robotlar-icin-matematik-temelleri/
 [Uzaktan Eğitim Araştırma ve Uygulama Merkezi]:http://edestek.kocaeli.edu.tr/
-[Bir önceki ders]:/lecture/robotlar-icin-matematik-temelleri-1
-[Bir sonraki ders]:/lecture/robotlar-icin-matematik-temelleri-3
+[Bir önceki ders]:/robotlar-icin-matematik-temelleri-1
