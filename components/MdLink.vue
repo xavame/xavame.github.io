@@ -1,9 +1,14 @@
 <template>
-  <nuxt-link :to="this.href" :target="this.target" :class="'internal'" v-if="this.target==='_self'">
-    <slot></slot>
+  <nuxt-link
+    v-if="target === '_self'"
+    :to="href"
+    :target="target"
+    :class="'internal'"
+  >
+    <slot />
   </nuxt-link>
-  <a :href="this.href" :target="this.target" :class="'external'" v-else>
-    <slot></slot>
+  <a v-else :href="href" :target="target" :class="'external'">
+    <slot />
   </a>
 </template>
 
@@ -11,13 +16,18 @@
 export default {
   props: {
     href: {
-      type: String
+      type: String,
+      default: ""
     }
   },
   computed: {
-    target () {
-      return this.href ? this.href.startsWith("/") ? "_self" : "_blank" : "_blank"
+    target() {
+      return this.href
+        ? this.href.startsWith("/")
+          ? "_self"
+          : "_blank"
+        : "_blank";
     }
-  },
-}
+  }
+};
 </script>

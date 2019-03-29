@@ -1,19 +1,37 @@
-<script lang="js">
-  import MdLink from './MdLink.vue'
-  import AudioPlayer from './AudioPlayer.vue'
+<script>
+import MdLink from "./MdLink.vue";
+import ContentPlayer from "./ContentPlayer.vue";
+import FiguredImage from "./FiguredImage.vue";
 
-  export default {
-    props: ["renderFunc", "staticRenderFuncs"],
-    components: {
-      AudioPlayer, MdLink 
+export default {
+  components: {
+    MdLink,
+    ContentPlayer,
+    FiguredImage
+  },
+  props: {
+    renderFunc: {
+      type: String,
+      default: ""
     },
-    render: function (createElement) {
-      return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
-    },
-
-    created: function () {
-      this.templateRender = new Function(this.renderFunc)();
-      this.$options.staticRenderFns = new Function(this.staticRenderFuncs)();
+    staticRenderFuncs: {
+      type: String,
+      default: ""
     }
+  },
+  created: function() {
+    // DUDE. I CANNOT CONVERT STRING TO FUNCTION
+    // WITHOUT USING DISGUSTING MIGHTY EVIL "EVAL".
+    // CODE BELOW IS "EVAL" ITSELF, BUT IN DISGUISE.
+    // I AM REALLY SORRY. I KNOW YOU CAN DO BETTER.
+    /* eslint-disable no-new-func */
+    this.templateRender = new Function(this.renderFunc)();
+    this.$options.staticRenderFns = new Function(this.staticRenderFuncs)();
+  },
+  render: function(createElement) {
+    return this.templateRender
+      ? this.templateRender()
+      : createElement("div", "Rendering");
   }
+};
 </script>

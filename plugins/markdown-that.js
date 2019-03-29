@@ -4,34 +4,52 @@ const md = require('markdown-it')({
 })
 
 md.use(require('markdown-it-highlightjs'), {
-  auto:false
-})
-.use(require('markdown-it-katex'))
-.use(require('markdown-it-sup'))
-.use(require('markdown-it-sub'));
+    auto: false
+  })
+  .use(require('markdown-it-katex'))
+  .use(require('markdown-it-sup'))
+  .use(require('markdown-it-sub'));
 
 getAttr = (token, attr) => {
   let returnObj = token.attrs[token.attrIndex(attr)];
   return typeof returnObj !== "undefined" ? returnObj[1] : "";
 }
 
+setAttr = (tokens, idx, attr, value) => {
+  if (tokens[idx].attrIndex(attr) < 0) {
+    tokens[idx].attrPush([attr, value]);
+  } else {
+    tokens[idx].attrs[tokens[idx].attrIndex(attr)][1] = value;
+  }
+}
+
+
+
 md.renderer.rules.image = function (tokens, idx, options, env, self) {
   let token = tokens[idx],
-      href = getAttr(token, 'src'),
-      text = getAttr(token, 'alt'),
-      title = getAttr(token, 'title');
+    text = token.content,
+    href = getAttr(token, 'src');
 
   //IF AUDIO
-  let audioFiles = ["mp3", "wav", "ogg", "flac", "aiff", "mid", "aac", "wma", "alac", "ape"]
-  if (audioFiles.some((s) => href.toLowerCase().endsWith(s))) {
-    tokens[idx]["tag"] = "audio-player";
-    console.log(tokens[idx]);
+  if (["mp3", "wav", "ogg", "flac", "aiff", "mid", "aac", "wma", "alac", "ape"].some((s) => href.toLowerCase().endsWith(s))) {
+    tokens[idx]["tag"] = "content-player";
+    setAttr(tokens, idx, 'type', 'audio')
     return self.renderToken(tokens, idx, options);
   }
 
-  return (title ? `<figure class='${title}'>` : "")
-            + `<image-responsive class="${title}" imageURL="${href}" alt="${text}" title="${text}">`
-            + ((title && text) ? `<figcaption>${text}</figcaption></figure>` : `</figure>`)
+  //IF IMAGE
+  else if (["jpg", "jpeg", "webp", "gif", "png", "apng", "svg", "xbm", "bmp", "ico"].some((s) => href.toLowerCase().endsWith(s))) {
+    tokens[idx]["tag"] = "figured-image";
+    setAttr(tokens, idx, 'alt', text)
+    return self.renderToken(tokens, idx, options);
+  }
+
+  //IF VIDEO
+  else if (["3gp", "avi", "mov", "mp4", "m4v", "m4a", "mkv", "ogv", "ogm", "oga"].some((s) => href.toLowerCase().endsWith(s))) {
+    tokens[idx]["tag"] = "content-player";
+    setAttr(tokens, idx, 'type', 'video')
+    return self.renderToken(tokens, idx, options);
+  }
 };
 
 md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
@@ -39,8 +57,9 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
   return self.renderToken(tokens, idx, options);
 };
 
-md.renderer.rules.link_close = function () { return '</md-link>' }
-
+md.renderer.rules.link_close = function () {
+  return '</md-link>'
+}
 
 module.exports = {
   md: (m) => {

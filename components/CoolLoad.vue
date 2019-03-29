@@ -9,17 +9,17 @@ export default {
   props: {
     type: {
       type: String,
-      default: '',
-    },
+      default: ""
+    }
   },
   data: function() {
-    return {}
+    return {};
   },
   mounted: function() {
-    const coolLoad = this.$refs.coolLoad
-    const slot = this.$slots.default[0].elm
-    coolLoad.classList.remove('loading')
-    slot.classList.remove('waitLoad')
-  },
-}
+    const coolLoad = this.$refs.coolLoad;
+    const slot = this.$slots.default[0].elm;
+    coolLoad.classList.remove("loading");
+    slot.classList.remove("waitLoad");
+  }
+};
 </script>
