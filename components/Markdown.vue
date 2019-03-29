@@ -1,9 +1,11 @@
 <script lang="js">
   import MdLink from './MdLink.vue'
+  import AudioPlayer from './AudioPlayer.vue'
+
   export default {
     props: ["renderFunc", "staticRenderFuncs"],
     components: {
-      MdLink
+      AudioPlayer, MdLink 
     },
     render: function (createElement) {
       return this.templateRender ? this.templateRender() : createElement("div", "Rendering");

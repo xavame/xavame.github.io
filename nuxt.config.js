@@ -52,7 +52,7 @@ module.exports = {
   ],
 
   build: {
-    extend (config) {
+    extend (config, ctx) {
       const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/');
       config.module.rules.splice(config.module.rules.indexOf(rule), 1);
 
@@ -74,6 +74,19 @@ module.exports = {
           name: 'img/[name].[hash:7].[ext]'
         }
       });
+
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options : {
+            fix : true
+          }
+        })
+      }
+      
     }
   },
 

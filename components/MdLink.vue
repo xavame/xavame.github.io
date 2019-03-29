@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     target () {
-      return this.href.startsWith("/") ? "_self" : "_blank"
+      return this.href ? this.href.startsWith("/") ? "_self" : "_blank" : "_blank"
     }
   },
 }
