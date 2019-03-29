@@ -23,33 +23,43 @@ setAttr = (tokens, idx, attr, value) => {
   }
 }
 
-
-
 md.renderer.rules.image = function (tokens, idx, options, env, self) {
   let token = tokens[idx],
     text = token.content,
     href = getAttr(token, 'src');
 
+  if(text==="embed:youtube"){
+    tokens[idx]["tag"] = "embed-youtube";
+    var ytRegEx = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/ig;
+    let resultArr = ytRegEx.exec(href);
+    var result = resultArr ? resultArr[1] : 'C0DPdy98e4c';
+    setAttr(tokens, idx, 'id', result)
+  }
+
+  else if(text==="embed:twitter"){
+    tokens[idx]["tag"] = "embed-twitter";
+    setAttr(tokens, idx, 'id', href)
+  }
+
   //IF AUDIO
-  if (["mp3", "wav", "ogg", "flac", "aiff", "mid", "aac", "wma", "alac", "ape"].some((s) => href.toLowerCase().endsWith(s))) {
+  else if (["mp3", "wav", "ogg", "flac", "aiff", "mid", "aac", "wma", "alac", "ape"].some((s) => href.toLowerCase().endsWith(s))) {
     tokens[idx]["tag"] = "content-player";
     setAttr(tokens, idx, 'type', 'audio')
-    return self.renderToken(tokens, idx, options);
   }
 
   //IF IMAGE
   else if (["jpg", "jpeg", "webp", "gif", "png", "apng", "svg", "xbm", "bmp", "ico"].some((s) => href.toLowerCase().endsWith(s))) {
     tokens[idx]["tag"] = "figured-image";
     setAttr(tokens, idx, 'alt', text)
-    return self.renderToken(tokens, idx, options);
   }
 
   //IF VIDEO
   else if (["3gp", "avi", "mov", "mp4", "m4v", "m4a", "mkv", "ogv", "ogm", "oga"].some((s) => href.toLowerCase().endsWith(s))) {
     tokens[idx]["tag"] = "content-player";
     setAttr(tokens, idx, 'type', 'video')
-    return self.renderToken(tokens, idx, options);
   }
+
+  return self.renderToken(tokens, idx, options);
 };
 
 md.renderer.rules.link_open = function (tokens, idx, options, env, self) {

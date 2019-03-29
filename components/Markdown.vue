@@ -2,12 +2,16 @@
 import MdLink from "./MdLink.vue";
 import ContentPlayer from "./ContentPlayer.vue";
 import FiguredImage from "./FiguredImage.vue";
+import EmbedYoutube from "./EmbedYoutube.vue";
+import EmbedTwitter from "./EmbedTwitter.vue";
 
 export default {
   components: {
     MdLink,
     ContentPlayer,
-    FiguredImage
+    FiguredImage,
+    EmbedYoutube,
+    EmbedTwitter
   },
   props: {
     renderFunc: {

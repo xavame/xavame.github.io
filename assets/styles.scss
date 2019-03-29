@@ -368,6 +368,23 @@ main.totem {
   max-width: 1040px;
   margin: 0 auto 144px;
   overflow: visible;
+  .embedTwitter{
+    twitter-widget {
+      margin: 0 auto;
+      padding-bottom: 30pt;
+    }
+  }
+  .embedYoutube{
+    overflow:hidden;
+    width:100%;
+    border-radius:5pt;
+    iframe{
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
   .player {
     width: 100%;
     height: auto;
