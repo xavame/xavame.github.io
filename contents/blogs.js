@@ -1,4 +1,5 @@
 export default [
+  "gevsek-javascript",
   "akbankin-ikonik-kalp-atisi",
   "ilim-ile-bilim-arasindaki-fark",
   "kimim",

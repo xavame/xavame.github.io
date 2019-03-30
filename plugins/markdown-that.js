@@ -8,7 +8,8 @@ md.use(require('markdown-it-highlightjs'), {
   })
   .use(require('markdown-it-katex'))
   .use(require('markdown-it-sup'))
-  .use(require('markdown-it-sub'));
+  .use(require('markdown-it-sub'))
+  .use(require('markdown-it-deflist'));
 
 getAttr = (token, attr) => {
   let returnObj = token.attrs[token.attrIndex(attr)];

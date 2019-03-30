@@ -9,6 +9,7 @@
               <span class="waitLoad">{{ featured.title.toLowerCase() }}</span>
             </h2>
           </CoolLoad>
+          <div class="clear" />
           <CoolLoad type="dqs" style="margin-top: 30px;display: inline-block;">
             <span>
               <span class="waitLoad link">OKU --></span>

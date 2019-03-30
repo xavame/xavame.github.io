@@ -97,7 +97,7 @@ html, body{
 @keyframes show {
   0% {opacity:0;}
   99% {opacity:0;}
-  100% {opacity:1;}
+  100% {opacity:1;    overflow: visible;}
 }
 
 @keyframes ripple {
@@ -133,6 +133,9 @@ html, body{
   height: auto;
   position:relative;
   overflow:hidden;
+  & > * {
+    padding: 5pt 0;
+  }
   &::before{
       content:'';
       background:#f86e8f;
@@ -360,6 +363,13 @@ html, body{
 
 .hljs-link {
   text-decoration: underline
+}
+
+.clear{
+  clear: both;
+  display: block;  
+  content: "";
+  width: 100%;  
 }
 
 
