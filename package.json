@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate --no-lock",
     "analyze": "nuxt build --analyze"
   },
   "devDependencies": {
