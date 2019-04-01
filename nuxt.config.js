@@ -106,7 +106,7 @@ module.exports = {
   },
 
   generate: {
-    routes: []
+    routes: ['404']
     .concat(blogs.map(w => `/${w}`))
     .concat(lectures.map(w => `/${w}`))
     .concat(other.map(w => `/${w}`))
