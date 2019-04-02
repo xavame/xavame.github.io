@@ -1,9 +1,8 @@
 ---
 name: 'kimim'
 title: 'Kimim ben?'
-year: '2018'
-color: '#000'
-id: 'kimim'
+date: 1533398520
+tag: 'other'
 description: |
   Çok da gizli olmayan bilgiler
 ---

@@ -1,9 +1,8 @@
 ---
 name: 'google-ctf-macerasi-2'
 title: 'Google CTF Macerası #2'
-year: '2018'
-color: '#19c5c5'
-id: 'google-ctf-macerasi-2'
+date: 1533771960
+tag: 'code'
 description: |
   Çok da eğlenceli olmayan anlar. Ama neyi anlar? Üşütüyorum...
 ---

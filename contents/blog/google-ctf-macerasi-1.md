@@ -1,9 +1,8 @@
 ---
 name: 'google-ctf-macerasi-1'
 title: 'Google CTF Macerası #1'
-year: '2018'
-color: '#19c5c5'
-id: 'google-ctf-macerasi-1'
+date: 1533463980
+tag: 'code'
 description: |
   Hoppala ve de cuppala, burası XNB.
 ---

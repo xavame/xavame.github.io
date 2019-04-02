@@ -1,9 +1,8 @@
 ---
 name: 'ilim-ile-bilim-arasindaki-fark'
 title: 'İlim İle Bilim Arasındaki Fark'
-year: '2018'
-color: '#6c3093'
-id: 'ilim-ile-bilim-arasindaki-fark'
+date: 1537539718
+tag: 'other'
 description: |
   Spoiler: B değil.
 ---

@@ -1,9 +1,8 @@
 ---
 name: 'gevsek-javascript'
 title: "Gevşek JavaScript"
-year: '30 Mart 2019'
-color: '#000'
-id: 'gevsek-javascript'
+date: 1553904000
+tag: 'code'
 description: |
   Life's a beach.
 ---

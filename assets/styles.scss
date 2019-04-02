@@ -77,6 +77,10 @@ html, body{
   margin:0 auto;
 }
 
+.right{
+  float:right;
+}
+
 @keyframes fadeFromBottom {
   0% {transform: translateY(50px);opacity:0;}
   100% {transform: translateY(0px);opacity:1;}
@@ -562,7 +566,7 @@ main.totem {
     background: transparent;
     transition: 0.5s border;
   }
-  p {
+  p, .p {
     max-width: 800px;
     margin: 0 auto;
     font-size: 15pt;
@@ -611,7 +615,7 @@ main.totem {
       transition: 0.5s background;
       color: #eee;
     }
-    p {
+    p, .p {
       max-width: 600px;
       padding-top: 30pt;
       font-size: 32pt;
@@ -642,7 +646,7 @@ main.totem {
         right: 0;
       }
     }
-    & + p {
+    & + p, & + .p {
       padding-top: 30pt;
     }
   }
@@ -757,7 +761,7 @@ main.totem {
     h6 {
       padding: 50pt 10pt 10pt;
     }
-    p {
+    p, .p {
       padding: 0 10pt 30pt;
     }
     pre {

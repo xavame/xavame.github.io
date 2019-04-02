@@ -1,9 +1,8 @@
 ---
 name: 'robotlar-icin-matematik-temelleri-2'
 title: 'Robotlar İçin Matematik Temelleri #2'
-year: '2018'
-color: '#000'
-id: 'robotlar-icin-matematik-temelleri-2'
+date: 1538427061
+tag: 'lecture'
 description: |
   1 Ekim 2018
 ---

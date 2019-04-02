@@ -1,9 +1,8 @@
 ---
 name: 'nerelere-geldik-hanim'
 title: 'Nerelere Geldik Hanım?'
-year: '2018'
-color: '#fff'
-id: 'nerelere-geldik-hanim'
+date: 1537461108
+tag: 'other'
 description: |
   Aman aman
 ---

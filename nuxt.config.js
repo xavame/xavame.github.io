@@ -93,12 +93,7 @@ module.exports = {
   plugins: ['~/plugins/lazyload', '~/plugins/globalComponents', { src: '~plugins/ga.js', ssr: false }],
 
   modules: [
-    ['nuxt-sass-resources-loader', [
-        '@/assets/css/utilities/_variables.scss',
-        '@/assets/css/utilities/_helpers.scss',
-        '@/assets/css/base/_grid.scss',
-        '@/assets/css/base/_buttons.scss'
-    ]]
+    '@nuxtjs/moment'
   ],
 
   router: {

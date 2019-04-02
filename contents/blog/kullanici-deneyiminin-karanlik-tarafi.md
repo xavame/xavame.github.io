@@ -1,9 +1,8 @@
 ---
 name: 'kullanici-deneyiminin-karanlik-tarafi'
 title: 'Kullanıcı Deneyiminin Karanlık Tarafı'
-year: '2018'
-color: '#fff'
-id: 'kullanici-deneyiminin-karanlik-tarafi'
+date: 1536743285
+tag: 'design'
 description: |
   UX önemli gençler!
 ---

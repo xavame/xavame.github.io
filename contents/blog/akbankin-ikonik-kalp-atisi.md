@@ -1,9 +1,8 @@
 ---
 name: 'akbankin-ikonik-kalp-atisi'
 title: Akbank'ın İkonik Kalp Atışı
-year: 2018
-color: '#c51929'
-id: 'vue-nuxt-blog'
+date: 1538427902
+tag: 'other'
 description: |
   Bunu neden yaptım? Nasıl yaptım? Bunu bana kim yaptırdı?
 ---

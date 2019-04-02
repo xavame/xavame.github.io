@@ -1,9 +1,8 @@
 ---
 name: 'turkiyedeki-internet-rezilligi'
 title: "Türkiye'deki internet rezilliği"
-year: '2018'
-color: '#ff0000'
-id: 'turkiyedeki-internet-rezilligi'
+date: 1533413340
+tag: 'rant'
 description: |
   Umarım kurt adamlardan dava yemeyiz
 ---

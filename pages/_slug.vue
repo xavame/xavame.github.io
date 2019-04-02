@@ -42,10 +42,9 @@ export default {
       return {
         name: params.slug,
         title: attr.title,
-        year: attr.year,
-        id: attr.id,
+        date: attr.date,
         owner: attr.owner,
-        colors: attr.colors,
+        tag: attr.tag,
         role: attr.role,
         description: attr.description,
         related: attr.related,
@@ -126,7 +125,8 @@ export default {
     h6 {
       padding: 50pt 10pt 10pt;
     }
-    p {
+    p,
+    .p {
       padding: 0 10pt 30pt;
     }
     pre {

@@ -1,9 +1,8 @@
 ---
 name: 'robotlar-icin-matematik-temelleri-1'
 title: 'Robotlar İçin Matematik Temelleri #1'
-year: '2018'
-color: '#000'
-id: 'robotlar-icin-matematik-temelleri-1'
+date: 1538007060
+tag: 'lecture'
 description: |
   24 Eylül 2018
 ---
