@@ -65,39 +65,39 @@ Haydi **_Amazon_**'un, **hesap silme** ekranına bir bakalım... **_Tabii bulabi
 
 Öncelikle herkesin bakacağı bir yere, "hesabım" kısmına bakalım.
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/1.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/1.png)
 
 Bu linke girerek içerisinde verilen alt ayarlara bakalım.
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/2.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/2.png)
 
 Bakalım bakmasına da, **hesap silme** ile alakalı bir şey gözükmüyor.
 
 Belki de **_yardım_** istemeliyiz.
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/3.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/3.png)
 
 Yardım linkinindeki konuların hiçbirinin altında **hesap silme** ile alakalı bir şey yok. **_Amazon_**'a ulaşmaya mı çalışsak?
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/4.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/4.png)
 
 Bu butonların hiç birinde de **hesap silme** ile ilgili bir şey yok. Acaba _"Prime ve daha fazlası"_ butonundaki _"daha fazlası"_, **hesap silmeyi** kapsıyor mu?
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/5.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/5.png)
 
 Burada da **hesap silme** ile alakalı hiç bir şey göremedim. Buradaki _hesap bilgilerini güncelle_ en yakın seçenek gibi.
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/6.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/6.png)
 
 Evet, burada! Hesabımızı sonunda kapatabileceğiz!
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/7.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/7.png)
 
 **Kapatamadık.** Çünkü "bize ulaşın" sayfasındayız ve bir yetkili ile konuşmamız isteniyor. Hesabınızı maalesef siz _kapatamıyorsunuz_, sizin yerinize bir yetkili kapatmak zorunda.
 
 Haydi **_Amazon_** ile biraz sohbet edelim.
 
-![](/assets/kullanici-deneyiminin-karanlik-tarafi/8.webp)
+![](/assets/kullanici-deneyiminin-karanlik-tarafi/8.png)
 
 Sosyal kabiliyetimin yerlerde gezmesi sebebiyle konuya biraz kafalama giriş yapmış olsam da, cevabımızı aldık. Hesabımızı kapatabilmemiz için, bir yetkili ile görüşmemiz şart.
 

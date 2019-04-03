@@ -10,6 +10,13 @@
       {{ alt }}
     </figcaption>
   </figure>
+  <ImageResponsive
+    v-else
+    :class="title"
+    :image-u-r-l="src"
+    :alt="alt"
+    :title="alt"
+  />
 </template>
 
 <script>

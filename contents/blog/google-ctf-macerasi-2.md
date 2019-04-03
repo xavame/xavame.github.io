@@ -14,7 +14,7 @@ Bir önceki yazıya buradan ulaşabilirsiniz:
 [Google CTF Macerası #1]
 
 ## Bölüm 4 (Aşağıdaki, Pembe) - Floppy2
-![](/assets/google-ctf-macerasi-2/1.webp)
+![](/assets/google-ctf-macerasi-2/1.png)
 
 Bir önceki yazıdaki **Bölüm 2**'de bulunan `www.com`, şimdi işimize yarayacak gibi gözüküyor.
 
@@ -42,22 +42,22 @@ Bunun yanında **DEBUG** etmek için de bir uygulamaya ihtiyacınız var.
 
 Dosyayı indirdikten sonra **DOSBOX**'u açıyoruz ve istediğimiz klasörü ~~mount ediyoruz~~ yerleştiriyoruz. Daha sonra yerleştirdiğimiz sürücüye giriyoruz ve dosyamızı çalıştırıyoruz.
 
-![](/assets/google-ctf-macerasi-2/2.webp)
+![](/assets/google-ctf-macerasi-2/2.png)
 
 İndirdiğimiz **debug** dosyasının komutlarını listelemek için `?` yazıyoruz ve komutlar listeleniyor.
 
-![](/assets/google-ctf-macerasi-2/3.webp)
+![](/assets/google-ctf-macerasi-2/3.png)
 
 Bize lazım olan komutlar `d` memory dump (bellek dökümü), `g` go (başlat) ve `q` quit (çıkış).
 
-![](/assets/google-ctf-macerasi-2/4.webp)
+![](/assets/google-ctf-macerasi-2/4.png)
 
 Başlattıktan sonra bellek dökümüna baktığımızda flag'in burada gözüktüğünü görebiliriz.
 
 Flag'imiz, `CTF{g00do1dDOS-FTW}`
 
 ## Bölüm 5 (Yukarıdaki, Pembe) - OCR Is Cool!
-![](/assets/google-ctf-macerasi-2/5.webp)
+![](/assets/google-ctf-macerasi-2/5.png)
 
 ~~Caesar Cipher'in~~ Sezar Şifrelemenin ne olduğunu bildiğim için Caesar kelimesini duyar duymaz bu bölümün ne olduğunu az çok kestirebilmiştim.
 Bize bir ekran görüntüsü verilecek ve OCR (Optical Character Recognition, Optik Karakter Tanıma) ile biz bu yazıyı okuyacağız.
@@ -75,7 +75,7 @@ Daha sonra sezar şifreleme metodu kullanarak karakterleri `n` adım ileri veya 
 
 Bunun tersini yaparsak da Qivlefe kelimesinden "Merhaba"'yı bulabiliyoruz.
 
-![](/assets/google-ctf-macerasi-2/6.webp)
+![](/assets/google-ctf-macerasi-2/6.png)
 
 `Px tkx`, `We are`'a n=7'de çevriliyor.
 
@@ -111,7 +111,7 @@ Happy iDropDriving!
 Burada da açıkça görüldüğü üzere şifremiz `CTF{caesarcipherisasubstitutioncipher}`
 
 ## Bölüm 6 (Ortadaki, Mavi) - ROUTER-UI
-![](/assets/google-ctf-macerasi-2/7.webp)
+![](/assets/google-ctf-macerasi-2/7.png)
 
 Yapılacaklar:
 - XSS açığı bul
@@ -124,11 +124,11 @@ Yapılacaklar:
 
 Öncelikle **XSS** açığı çalışıyor mu diye bir bakalım.
 
-![](/assets/google-ctf-macerasi-2/8.webp)
+![](/assets/google-ctf-macerasi-2/8.png)
 
 Ve, anında **Chrome**'a yakalandık. :(
 
-![](/assets/google-ctf-macerasi-2/9.webp)
+![](/assets/google-ctf-macerasi-2/9.png)
 
 Demek ki **XSS** açığı varmış. Peki Chrome'un bu açığı engellememesini nasıl sağlayabilirim?
 
@@ -153,7 +153,7 @@ Yaşasın! Scriptimizi başarıyla çalıştırdık... mı acaba?
 
 Madem çalıştırdık, neden bir `alert` gelmedi? Hemen **Chrome Geliştirici Konsolunu** açıyorum ve **Network** sekmesini inceliyorum. 
 
-![](/assets/google-ctf-macerasi-2/10.webp)
+![](/assets/google-ctf-macerasi-2/10.png)
 
 İsteğimizin **HTTP** portundan gönderilmesi sonucu **Mixed Content** hatasına yakalanmışız.
 
@@ -168,7 +168,7 @@ Kullanıcı adı: <script src="https:
 ```
 
 Ve istenen mesaj:
-![](/assets/google-ctf-macerasi-2/11.webp)
+![](/assets/google-ctf-macerasi-2/11.png)
 
 Bundan sonrası çorap söküğü gibi gelecek. Bu **JavaScript** ile dökümana bir img elementi koyduk mu _session_ bilgileri eilimizde.
 
@@ -213,11 +213,11 @@ Kısacası, _session_ bilgilerini almak istediğim sunucu, benim **JS** betiğim
 
 Mailimi attım ve tuzağıma düşüşünü izledim >:)
 
-![](/assets/google-ctf-macerasi-2/12.webp)
+![](/assets/google-ctf-macerasi-2/12.png)
 
 Tıkladığını da veritabanımdan kontrol ettim:
 
-![](/assets/google-ctf-macerasi-2/13.webp)
+![](/assets/google-ctf-macerasi-2/13.png)
 
 _Session_ bilgileri:
 
@@ -225,11 +225,11 @@ _Session_ bilgileri:
 
 _Session_ bilgilerini, *konsol*da `document.cookie="..."` çalıştırarak içeriye sızdım.
 
-![](/assets/google-ctf-macerasi-2/14.webp)
+![](/assets/google-ctf-macerasi-2/14.png)
 
 **_Google-Haus Credentials_**'e sağ tıkladım ve...
 
-![](/assets/google-ctf-macerasi-2/15.webp)
+![](/assets/google-ctf-macerasi-2/15.png)
 
 Şifre kabak gibi ortaya çıktı. Şifremiz, `CTF{Kao4pheitot7Ahmu}`
 

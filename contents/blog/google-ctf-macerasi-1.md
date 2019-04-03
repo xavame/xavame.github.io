@@ -13,17 +13,17 @@ Ancak daha önce hiç _Kriptografi_ veya _Reverse Engineering_ (tersine mühendi
 
 Daha fazla spoiler (sürpriz kaçıran) almamak için videoyu kapattım ve **Google CTF**'i oynamaya karar verdim. Gerek retro tasarımı, gerekse eğlenceli ilerleyişiyle beni içine çekmeyi başardı.
 
-![](/assets/google-ctf-macerasi-1/1.webp "center")
+![](/assets/google-ctf-macerasi-1/1.png "center")
 
 Haydi başlayalım.
 
 ## Bölüm 1 - Letter
 
-![](/assets/google-ctf-macerasi-1/2.webp)
+![](/assets/google-ctf-macerasi-1/2.png)
 
 Bize bir **ZIP** dosyası içerisinde bir **PDF** verdi. **PDF**'in içeriği şu şekilde:
 
-![](/assets/google-ctf-macerasi-1/3.webp)
+![](/assets/google-ctf-macerasi-1/3.png)
 
 Öncelikle bu dosyayı bir **HEX Editör** olan [Hexed.it] ile açmayı denedim. İstenen şifrenin **_CTF{...}_** şeklinde olduğunu bildiğimden **CTF** ile alakalı bir string aradım.
 
@@ -41,15 +41,15 @@ Bu şifreyi, yani **_CTF{ICanReadDis}_** dizgesini boşluğa girdim ve ikinci ka
 
 
 ## Bölüm 2 (Ortadaki, Pembe) - Floppy
-![](/assets/google-ctf-macerasi-1/4.webp)
+![](/assets/google-ctf-macerasi-1/4.png)
 
 **ZIP** dosyasının içerisinden  bir adet **foo.ico** dosyası çıktı. Dosyayı yine başlangıç olarak [Hexed.it] ile açtım. Biraz incelediğimde içinde iki adet dosyanın, `driver.txt` ve `www.com`'un, gömülü olduğunu gördüm. 
 
-![](/assets/google-ctf-macerasi-1/5.webp)
+![](/assets/google-ctf-macerasi-1/5.png)
 
 **7ZIP** programı ile **foo.ico** içerisinde girdim ve dosyaların gerçekten burada olduğunu doğruladım.
 
-![](/assets/google-ctf-macerasi-1/6.webp)
+![](/assets/google-ctf-macerasi-1/6.png)
 
 `driver.txt` dosyasının içeriği:
 ```
@@ -68,7 +68,7 @@ The Foobanizer9000 is no longer on the OffHub DMZ.          $
 
 ## Bölüm 3 (Ortadaki, Mavi) - JS SAFE
 
-![](/assets/google-ctf-macerasi-1/6.5.webp)
+![](/assets/google-ctf-macerasi-1/6.5.png)
 
 Geçmeden önce şunu söylememde fayda var. Bu bölüm bundan önceki diğer iki bölümden **_ÇOK_** daha zor. Bu yüzden size tavsiyem, sindire sindire okumanız.
 
@@ -150,11 +150,11 @@ console.log(i, Object.assign({},env), env[lhs], env[fn], env[arg1], env[arg2], e
 Burada env'in kopyasını aldığıma dikkat edin. Bunu yapmamın sebebi, env'in sadece bir referans olarak değil, yeni bir obje olarak oluşturulmasını istemem. Eğer referans olarak alsaydık, tüm yazdırılan env'leri aynı görürdük çünkü Chrome konsolu, bu objeyi açmaya çalıştığımızda son düzenlenen veriyi gösteriyor.
 
 İlk iterasyondaki değişim:
-![](/assets/google-ctf-macerasi-1/7.webp)
+![](/assets/google-ctf-macerasi-1/7.png)
 
 Sondaki `env["h"]`'ı koymamın nedeni, bu değerin nerede değiştiğini ve bizi 0'dan büyük bir değere götürdüğünü anlamak. Eğer `h`'nin neden değiştiğini bulabilirsem, değiştiği yerdeki fonksiyonun ne işe yaradığını çözmeyi deneyebilirim.
 
-![](/assets/google-ctf-macerasi-1/8.webp)
+![](/assets/google-ctf-macerasi-1/8.png)
 
 `h` ilk defa değişiyor ve elimizde bir byte array var.
 
@@ -172,7 +172,7 @@ Bize dönen sonuç:
 03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
 ```
 Bunu Google'da arattığımızda şöyle bir şeyle karşılaşıyoruz:
-![](/assets/google-ctf-macerasi-1/9.webp)
+![](/assets/google-ctf-macerasi-1/9.png)
 
 Eğer hala göremediyseniz, açıklama kısmına bakın. Rastgele denediğimiz şifreyi, **_1234_**'ü gösteriyor.
 
@@ -187,7 +187,7 @@ console.log(i, Object.assign({},env), env[lhs], env[fn], env[arg1], env[arg2], e
 
 Bütün bunlardan sorumlu olan fonksiyonu arıyorum.
 
-![](/assets/google-ctf-macerasi-1/10.webp)
+![](/assets/google-ctf-macerasi-1/10.png)
 
 Burada iki fonksiyon var. Biri XOR, biri OR işlemi yapıyor. Bizim password hashimiz ile işleme giren fonksiyon, `ѡ` fonksiyonu.
 
@@ -214,7 +214,7 @@ console.log(arr);
 
 Bunu az önceki gibi dönüştürüp **Google**'da aratıyorum.
 
-![](/assets/google-ctf-macerasi-1/11.webp)
+![](/assets/google-ctf-macerasi-1/11.png)
 
 Ve görüldüğü üzere şifremiz **_CTF{Passw0rd!}_**
 
