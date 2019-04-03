@@ -25,11 +25,10 @@ export default {
   meta: {
     depth: 3
   },
-
-    components: { Markdown, Header },
+  components: { Markdown, Header },
   computed: {
     ogImage: function () {
-      return `${process.env.baseUrl}/images/og-banner.png`;
+      return `/assets/${name}/_thumb.jpg`;
       // return `${process.env.baseUrl}/images/blog/${this.id}/_thumbnail.jpg`;
     },
     pageTitle: function () {

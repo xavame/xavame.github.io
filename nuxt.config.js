@@ -93,7 +93,7 @@ module.exports = {
   plugins: ['~/plugins/lazyload', '~/plugins/globalComponents', { src: '~plugins/ga.js', ssr: false }],
 
   modules: [
-    '@nuxtjs/moment'
+    ['@nuxtjs/moment', { localesToKeep:['tr'], locales: ['tr'], defaultLocale: 'tr' }]
   ],
 
   router: {

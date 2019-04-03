@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ left: logoLeft }">
+  <header>
     <div class="limit">
       <nuxt-link to="/" class="logo">
         <img src="/images/logo-xnb.svg" alt="XNB" />
@@ -10,24 +10,6 @@
 
 <script>
 export default {
-  name: "Header",
-  computed: {
-    logoLeft() {
-      return this.$route.path === "/";
-    }
-  }
+  name: "Header"
 };
 </script>
-
-<style lang="scss">
-#__nuxt {
-  header.left {
-    .limit {
-      max-width: 100%;
-      .logo {
-        left: 120px;
-      }
-    }
-  }
-}
-</style>

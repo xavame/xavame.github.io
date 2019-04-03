@@ -9,19 +9,11 @@
         belirtilmiştir.
       </p>
       <div class="yazilar">
-        <div class="p">
-          <div class="tags">
-            <div
-              v-for="tag in tags"
-              :key="tag.name"
-              :class="['tag', activeTag === tag.id ? 'active' : ''].join(' ')"
-              @click="tagChange(tag.id)"
-            >
-              <span>{{ tag.name }}</span>
-              <div class="circle" :style="'background: ' + tag.color + ';'" />
-            </div>
-          </div>
-        </div>
+        <TagChanger
+          :tags="tags"
+          :tag-change="tagChange"
+          :active-tag="activeTag"
+        />
         <div v-for="year in dates" :key="year.id">
           <div v-for="month in year.months" :key="month.name">
             <h2
@@ -75,23 +67,17 @@
 <script>
 import blogs from "~/contents/blogs.js";
 import lectures from "~/contents/lectures.js";
+import tags from "~/contents/tags.js";
 import Header from "~/components/Header.vue";
+import TagChanger from "~/components/TagChanger.vue";
 
 export default {
   meta: {
     depth: 2
   },
-  components: { Header },
+  components: { Header, TagChanger },
   data: function() {
     return {
-      tags: [
-        { id: "all", name: "Tümü", color: "#ccc" },
-        { id: "rant", name: "Eleştiri", color: "#e06c75" },
-        { id: "code", name: "Yazılım", color: "#98c379" },
-        { id: "design", name: "Tasarım", color: "#448aff" },
-        { id: "lecture", name: "Ders", color: "#7929d0" },
-        { id: "other", name: "Diğer", color: "#e6c07b" }
-      ],
       activeTag: "all"
     };
   },
@@ -165,7 +151,7 @@ export default {
         .months[dateArray[1]].blogs.push(el);
     });
 
-    return { dates };
+    return { dates, tags };
   },
 
   head() {
@@ -204,50 +190,6 @@ main.totem {
     overflow: hidden;
     clear: both;
     float: none;
-  }
-  .tags {
-    width: auto;
-    display: inline-block;
-    &:hover {
-      .tag {
-        &.active {
-          opacity: 0.3;
-          span {
-            color: #999;
-          }
-        }
-        &:hover {
-          opacity: 1;
-          span {
-            color: #111;
-          }
-        }
-      }
-    }
-    .tag {
-      width: auto;
-      display: inline-block;
-      padding-right: 20px;
-      opacity: 0.3;
-      transition: 0.3s all;
-      cursor: pointer;
-      span {
-        color: #999;
-      }
-      &.active {
-        opacity: 1;
-        span {
-          color: #111;
-        }
-      }
-      .circle {
-        width: 7px;
-        height: 7px;
-        display: inline-block;
-        border-radius: 50px;
-        vertical-align: middle;
-      }
-    }
   }
 
   span a {
