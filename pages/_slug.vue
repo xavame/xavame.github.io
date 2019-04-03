@@ -28,7 +28,7 @@ export default {
   components: { Markdown, Header },
   computed: {
     ogImage: function () {
-      return `/assets/${this.name}/_thumb.jpg`;
+      return `${process.env.baseUrl}/assets/${this.name}/_thumb.jpg`;
       // return `${process.env.baseUrl}/images/blog/${this.id}/_thumbnail.jpg`;
     },
     pageTitle: function () {
