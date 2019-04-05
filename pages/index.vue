@@ -3,7 +3,7 @@
     <Header />
     <main>
       <div class="background">
-        <div class="dots" :style="dots" />
+        <div class="dots" :style="{ boxShadow: dots }" />
       </div>
       <BlogCard :blogs="[blogs[0]]" :tags="tags" featured="true" />
       <BlogCard :blogs="blogs.slice(1, 7)" :tags="tags" />
@@ -32,7 +32,7 @@ export default {
 
   data: function() {
     return {
-      dots: ""
+      dots: {}
     };
   },
 
@@ -54,20 +54,9 @@ export default {
     return { ...allBlogs, tags };
   },
 
-  created() {
-    let k = "";
-    for (let i = -60; i < 60; i++) {
-      for (let j = -10; j < 10; j++) {
-        k += i * 30 + "px " + j * 30 + "px #fff,";
-      }
-    }
-    this.dots = { boxShadow: k.slice(0, -1) };
-  },
-
   mounted() {
-    const that = this;
     let k = "";
-    for (let i = -60; i < 60; i++) {
+    for (let i = -45; i < 45; i++) {
       for (let j = -10; j < 10; j++) {
         const mr = Math.random();
         if (mr > 0.99) {
@@ -79,7 +68,7 @@ export default {
         }
       }
     }
-    that.dots = { boxShadow: k.slice(0, -1) };
+    this.dots = k.slice(0, -1);
   },
 
   head() {
@@ -175,7 +164,6 @@ main {
     position: absolute;
     left: 50vw;
     top: 200pt;
-    transition: 1s box-shadow linear;
   }
 }
 
