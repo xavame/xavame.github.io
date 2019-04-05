@@ -66,22 +66,20 @@ export default {
 
   mounted() {
     const that = this;
-    setInterval(function() {
-      let k = "";
-      for (let i = -60; i < 60; i++) {
-        for (let j = -10; j < 10; j++) {
-          const mr = Math.random();
-          if (mr > 0.99) {
-            k += i * 30 + "px " + j * 30 + "px 0px 1px #f86e8f,";
-          } else if (mr > 0.6) {
-            k += i * 30 + "px " + j * 30 + "px #eee,";
-          } else {
-            k += i * 30 + "px " + j * 30 + "px #fff,";
-          }
+    let k = "";
+    for (let i = -60; i < 60; i++) {
+      for (let j = -10; j < 10; j++) {
+        const mr = Math.random();
+        if (mr > 0.99) {
+          k += i * 30 + "px " + j * 30 + "px 0px 1px #f86e8f,";
+        } else if (mr > 0.6) {
+          k += i * 30 + "px " + j * 30 + "px #eee,";
+        } else {
+          k += i * 30 + "px " + j * 30 + "px #fff,";
         }
       }
-      that.dots = { boxShadow: k.slice(0, -1) };
-    }, 1000);
+    }
+    that.dots = { boxShadow: k.slice(0, -1) };
   },
 
   head() {
