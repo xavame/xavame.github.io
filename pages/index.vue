@@ -2,7 +2,9 @@
   <div id="root">
     <Header />
     <main>
-      <div class="background" />
+      <div class="background">
+        <div class="dots" :style="dots" />
+      </div>
       <BlogCard :blogs="[blogs[0]]" :tags="tags" featured="true" />
       <BlogCard :blogs="blogs.slice(1, 7)" :tags="tags" />
       <nuxt-link to="/yazilar" class="toAll">
@@ -28,6 +30,12 @@ export default {
     BlogCard
   },
 
+  data: function() {
+    return {
+      dots: ""
+    };
+  },
+
   computed: {
     ogImage: function() {
       return `${process.env.baseUrl}/images/og-banner.png`;
@@ -44,6 +52,36 @@ export default {
       return { blogs };
     });
     return { ...allBlogs, tags };
+  },
+
+  created() {
+    let k = "";
+    for (let i = -60; i < 60; i++) {
+      for (let j = -10; j < 10; j++) {
+        k += i * 30 + "px " + j * 30 + "px #fff,";
+      }
+    }
+    this.dots = { boxShadow: k.slice(0, -1) };
+  },
+
+  mounted() {
+    const that = this;
+    setInterval(function() {
+      let k = "";
+      for (let i = -60; i < 60; i++) {
+        for (let j = -10; j < 10; j++) {
+          const mr = Math.random();
+          if (mr > 0.99) {
+            k += i * 30 + "px " + j * 30 + "px 0px 1px #f86e8f,";
+          } else if (mr > 0.6) {
+            k += i * 30 + "px " + j * 30 + "px #eee,";
+          } else {
+            k += i * 30 + "px " + j * 30 + "px #fff,";
+          }
+        }
+      }
+      that.dots = { boxShadow: k.slice(0, -1) };
+    }, 1000);
   },
 
   head() {
@@ -115,7 +153,32 @@ main {
   height: 400pt;
   background: #fff;
   position: absolute;
+  overflow: hidden;
   left: 0;
+  z-index: 0;
+  &:before {
+    content: "";
+    width: 100%;
+    height: 250%;
+    z-index: 3;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.5) 30%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    position: absolute;
+  }
+  .dots {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 50vw;
+    top: 200pt;
+    transition: 1s box-shadow linear;
+  }
 }
 
 @media screen and (max-width: 800px) {

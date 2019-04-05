@@ -30,9 +30,9 @@ Nesnenin türüyle alakalı bir tanımlama gördünüz mü? Nesnenin mum olup ol
 Peki biz bu nesnenin türünü nereden bileceğiz?
 
 ```javascript
-  function tur(nesne){
-    return typeof nesne
-  }
+function tur(nesne){
+  return typeof nesne
+}
 ```
 
 Peki bu örneği biraz daha gerçekleyelim.

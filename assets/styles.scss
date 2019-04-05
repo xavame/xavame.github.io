@@ -721,27 +721,42 @@ main.totem {
   pre {
     margin-bottom: 25pt;
     overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 15px 60px -10px;
+    border-radius: 5pt;
+    background: #151515;
+    max-width: 800px;
+    margin: 25pt auto 50pt;
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: #f86e8f;
+      display: block;
+      border-radius: 50%;
+      margin: 20px 20px 0;
+      box-shadow: 20px 0 0 #e6c07b, 40px 0 0 #98c379;
+    }
     code {
       &:before,
       &:after {
         content: '';
       }
       color: #4d4949;
-      background: rgba(0, 0, 0, 0.01);
-      white-space: pre-wrap;
-      border-radius: 3pt;
-      transition: 0.5s color, 0.5s background;
-      padding: 20px 40px;
-      display: inline-block;
-      border: none;
-      width: 100%;
-      white-space: pre-wrap;
-      word-break: break-word;
-      border-radius: 10px;
-      cursor: initial;
-      font-size: 1em;
-      font-weight: 400;
-      min-width:800px;
+    border-radius: 3pt;
+    transition: color .5s,background .5s;
+    padding: 20px 20px;
+    display: inline-block;
+    border: none;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-radius: 10px;
+    cursor: auto;
+    font-size: 13pt;
+    font-weight: 400;
+    min-width: 800px;
+    color: #fffefe;
+    background: transparent;
     }
   }
 }
