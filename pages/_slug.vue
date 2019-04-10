@@ -13,6 +13,18 @@
         />
       </div>
     </main>
+    <no-ssr>
+      <div class="comments">
+        <h2>
+          Yorumlar
+        </h2>
+        <div id="commento" />
+        <script
+          data-css-override="/styles/commento.css"
+          src="https://commento.xava.me/js/commento.js"
+        />
+      </div>
+    </no-ssr>
   </div>
 </template>
 
@@ -109,7 +121,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @media screen and (max-width: 800px) {
   main.totem {
     white-space: pre-line;

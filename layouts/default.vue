@@ -1,7 +1,7 @@
 <template>
   <div id="layout">
     <transition :name="routeTransitionDirection">
-      <nuxt :key="$route.fullPath" />
+      <nuxt :key="$route.path" />
     </transition>
   </div>
 </template>
@@ -12,6 +12,9 @@ export default {
     routeTransitionDirection() {
       return this.$store.state.routeTransitionDirection;
     }
+  },
+  mounted: function() {
+    console.log("sa", this.$route);
   }
 };
 </script>
