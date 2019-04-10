@@ -8,7 +8,7 @@
   margin-top:25pt;
 
   * {
-    font-family: 'Fira Code';
+    font-family: firaCode,Consolas;
     font-size: 15px;
     line-height: 1.5;
     color: #50596c;
@@ -17,7 +17,7 @@
 
   code {
     background: #ffe3e3;
-    font-family: monospace;
+    font-family: firaCode,Consolas;
     line-height: 1.5;
     color: #fa5252;
     padding: 2px;
@@ -242,7 +242,7 @@
   textarea {
     display: inline-block;
     white-space: pre-wrap;
-    font-family: 'Fira Code', sans-serif;
+    font-family: firaCode,Consolas;
     padding: 8px;
     outline: 0;
     overflow: auto;
@@ -638,7 +638,7 @@
       }
 
       html {
-        font-family: 'Fira Code', sans-serif;
+        font-family: firaCode,Consolas;
         font-size: 14px;
         color: #495057;
         background: #f8f9fa
